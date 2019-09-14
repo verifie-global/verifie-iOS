@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
     s.homepage          = 'https://www.verifie.com'
     s.license           = { :type => 'Commercial', :file => 'LICENSE' }
     s.author            = 'Arthur'
-    s.source            = { :git => 'https://github.com/verifie-global/verifie-framework-iOS.git', :tag => "v#{s.version}"}
+    s.source            = { :git => 'https://github.com/verifie-global/verifie-iOS.git', :tag => "v#{s.version}"}
   
     s.ios.deployment_target = '10.0'
     s.swift_version = '5.0'
