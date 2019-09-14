@@ -1,0 +1,6 @@
+platform :ios, '10.0'
+use_frameworks!
+
+target 'Verifie_Example' do
+  pod 'Verifie', :path => '../'
+end
