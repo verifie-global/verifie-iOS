@@ -1,0 +1,11 @@
+framework module Verifie {
+  umbrella header "Verifie.h"
+
+  export *
+  module * { export * }
+}
+
+module Verifie.Swift {
+    header "Verifie-Swift.h"
+    requires objc
+}
