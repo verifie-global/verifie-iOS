@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = 'Verifie'
-    s.version          = '0.1.0'
+    s.version          = '0.1.1'
     s.summary          = 'A short description of Verifie.'
   
     s.description      = <<-DESC
@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
     s.vendored_frameworks = 'Verifie.framework'
     s.preserve_paths = '*.framework'
     
-    s.dependency 'Alamofire', '~> 5.0.0-beta.6'
+    s.dependency 'Alamofire', '~> 5.0.0-rc.2'
     s.dependency 'OpenCV-Dynamic'
     s.dependency 'SVProgressHUD'  
 end
