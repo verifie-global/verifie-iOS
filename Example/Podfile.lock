@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (5.0.0-beta.7)
+  - Alamofire (5.0.0-rc.2)
   - OpenCV-Dynamic (4.0.1)
   - SVProgressHUD (2.2.5)
   - Verifie (0.1.0):
@@ -21,10 +21,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Alamofire: bd07938ceecad59d2492aeecb1f785a8f2721160
+  Alamofire: f9450d3c7f6bea2ad62e7a541c3e9b186c7991d6
   OpenCV-Dynamic: bbf992e93caf93d94e7531db52760aa25e73faff
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  Verifie: 53d8929706e2f3d53110ea454644b1aa5c421bf4
+  Verifie: 261df461c86e529d27636d2b15641eeb3b826795
 
 PODFILE CHECKSUM: b9916c30c87cff5b2c17b316f2f85df7c5e0d0da
 
