@@ -35,7 +35,8 @@ source 'https://github.com/verifie-global/pod-specs.git'
 **Type:** `String`  
 **Value:** `Usage description...`
 
-#### Errors
+
+## Errors
 ```
 dyld: Library not loaded: /Users/"${USER}"/Library/Caches/CocoaPods/Pods/Release/OpenCV-Dynamic/4.0.1-bbf99/ios/build/build-iphonesimulator/lib/Release/opencv2.framework/opencv2
   Referenced from: /Users/"${USER}"/Library/Developer/CoreSimulator/Devices/AAD1EAA2-E169-414D-89CD-3B7C2398611A/data/Containers/Bundle/Application/9B0DC634-47B1-4557-9B28-B42561EDF1A9/Verifi-Test.app/Verifi-Test
