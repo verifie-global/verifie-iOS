@@ -59,7 +59,6 @@ Note that the `opencv2.framework/opencv2`'s parent (i.e. first file path) is a f
 `install_name_tool -id "@rpath/opencv2.framework/opencv2" opencv2.framework/opencv2` in your terminal and you'll see the opencv2.framework/opencv2's parent has become @rpath:
 ```
 $ otool -L opencv2.framework/opencv2 
-
 opencv2.framework/opencv2:
         @rpath/opencv2.framework/opencv2 (compatibility version 4.1.0, current version 4.1.0)
         /usr/lib/libc++.1.dylib (compatibility version 1.0.0, current version 400.9.4)
