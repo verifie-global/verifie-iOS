@@ -66,7 +66,10 @@ opencv2.framework/opencv2:
         /usr/lib/libc++.1.dylib (compatibility version 1.0.0, current version 400.9.4)
         /usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1252.200.5)
 ```
-These 3 steps should be able to solve your dynamic build problem.
+
+4. Then remove `yourProject/Pods/OpenCV-Dynamic` folder from your project and run `pod install` again.
+
+These 4 steps should be able to solve your dynamic build problem.
 
 *Source*: https://github.com/Legoless/OpenCV-Dynamic/issues/11#issuecomment-523261451
 
