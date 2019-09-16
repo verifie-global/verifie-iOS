@@ -44,7 +44,8 @@ dyld: Library not loaded: /Users/"${USER}"/Library/Caches/CocoaPods/Pods/Release
 
 In case you are getting `image not found` error follow these steps to fix the issue:
 
-1. Go to the directory that locates `opencv2.framework`
+1. Go to the directory that locates `opencv2.framework`.
+    - type `$ cd /Users/"${USER}"/Library/Caches/CocoaPods/Pods/Release/OpenCV-Dynamic/4.0.1-bbf99/`
 1. If you type `otool -L opencv2.framework/opencv2` in your terminal, you should get something like this
 ``` 
 $ otool -L opencv2.framework/opencv2
@@ -56,7 +57,7 @@ opencv2.framework/opencv2:
 Note that the `opencv2.framework/opencv2`'s parent (i.e. first file path) is a fixed path on your computer.
 
 1. Now type 
-`install_name_tool -id "@rpath/opencv2.framework/opencv2" opencv2.framework/opencv2` in your terminal and you'll see the opencv2.framework/opencv2's parent has become @rpath:
+`install_name_tool -id "@rpath/opencv2.framework/opencv2" opencv2.framework/opencv2` in your terminal and you'll see the `opencv2.framework/opencv2`'s parent has become @rpath:
 ```
 $ otool -L opencv2.framework/opencv2 
 opencv2.framework/opencv2:
