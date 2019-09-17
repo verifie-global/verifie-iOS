@@ -2,8 +2,8 @@ PODS:
   - Alamofire (5.0.0-rc.2)
   - OpenCV-Dynamic (4.0.1)
   - SVProgressHUD (2.2.5)
-  - Verifie (0.1.0):
-    - Alamofire (~> 5.0.0-beta.6)
+  - Verifie (0.1.2):
+    - Alamofire (~> 5.0.0-rc.2)
     - OpenCV-Dynamic
     - SVProgressHUD
 
@@ -24,7 +24,7 @@ SPEC CHECKSUMS:
   Alamofire: f9450d3c7f6bea2ad62e7a541c3e9b186c7991d6
   OpenCV-Dynamic: bbf992e93caf93d94e7531db52760aa25e73faff
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  Verifie: 261df461c86e529d27636d2b15641eeb3b826795
+  Verifie: 1058fcdb28a5faee1b89cdcce534a8e623241e68
 
 PODFILE CHECKSUM: b9916c30c87cff5b2c17b316f2f85df7c5e0d0da
 

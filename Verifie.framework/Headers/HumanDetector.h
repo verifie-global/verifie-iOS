@@ -16,7 +16,6 @@ typedef NS_ENUM(int, HumanDetectorResult) {
     HumanDetectorResultMoveAway,
     HumanDetectorResultBlinkEyes,
     HumanDetectorResultDetected,
-    HumanDetectorResultEyesDetected,
     HumanDetectorResultFaceFailed,
     HumanDetectorResultEyesFailed,
 };

@@ -166,6 +166,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import CoreGraphics;
 @import Foundation;
 @import ObjectiveC;
 @import UIKit;
@@ -191,6 +192,13 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 + (NSBundle * _Nonnull)sources SWIFT_WARN_UNUSED_RESULT;
 @end
 
+@protocol VerifieDocScannerViewControllerInterface;
+
+SWIFT_PROTOCOL("_TtP7Verifie39DocScannerViewControllerActionsDelegate_")
+@protocol DocScannerViewControllerActionsDelegate
+- (void)didPressCaptureButtonDocScannerViewController:(id <VerifieDocScannerViewControllerInterface> _Nonnull)sender;
+@end
+
 
 
 
@@ -207,6 +215,78 @@ SWIFT_CLASS("_TtC7Verifie7Verifie")
 
 
 
+
+@protocol VerifieBaseViewControllerDelegate;
+
+SWIFT_PROTOCOL("_TtP7Verifie30VerifieViewControllerInterface_")
+@protocol VerifieViewControllerInterface
+@property (nonatomic, strong) id <VerifieBaseViewControllerDelegate> _Nullable lifeCycleDelegate;
+@end
+
+@class NSCoder;
+
+SWIFT_CLASS("_TtC7Verifie25VerifieBaseViewController")
+@interface VerifieBaseViewController : UIViewController <VerifieViewControllerInterface>
+@property (nonatomic, weak) id <VerifieBaseViewControllerDelegate> _Nullable lifeCycleDelegate;
+- (void)viewDidLoad;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_PROTOCOL("_TtP7Verifie33VerifieBaseViewControllerDelegate_")
+@protocol VerifieBaseViewControllerDelegate
+- (void)viewControllerViewDidLoad:(VerifieBaseViewController * _Nonnull)sender;
+@end
+
+
+SWIFT_CLASS("_TtC7Verifie14VerifieConfigs")
+@interface VerifieConfigs : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class UIView;
+@class VerifieVideoSessionPreviewView;
+@class UILabel;
+@class UIImageView;
+
+SWIFT_PROTOCOL("_TtP7Verifie40VerifieDocScannerViewControllerInterface_")
+@protocol VerifieDocScannerViewControllerInterface <VerifieViewControllerInterface>
+@property (nonatomic, strong) UIView * _Null_unspecified croppingAreaView;
+@property (nonatomic, strong) VerifieVideoSessionPreviewView * _Null_unspecified videoPreviewView;
+@property (nonatomic, strong) UILabel * _Null_unspecified instructionsLabel;
+@property (nonatomic, strong) UIImageView * _Null_unspecified croppingAreaImageView;
+@property (nonatomic, strong) id <DocScannerViewControllerActionsDelegate> _Nullable actionsDelegate;
+@end
+
+
+SWIFT_PROTOCOL("_TtP7Verifie43VerifieHumanDetectorViewControllerInterface_")
+@protocol VerifieHumanDetectorViewControllerInterface <VerifieViewControllerInterface>
+@property (nonatomic, strong) VerifieVideoSessionPreviewView * _Null_unspecified previewView;
+- (void)updateWithStatusText:(NSString * _Nonnull)text;
+@end
+
+@class AVCaptureVideoPreviewLayer;
+
+SWIFT_CLASS("_TtC7Verifie30VerifieVideoSessionPreviewView")
+@interface VerifieVideoSessionPreviewView : UIView
+@property (nonatomic, strong) AVCaptureVideoPreviewLayer * _Nullable previewLayer;
+/// Should automatically rotate video or not
+@property (nonatomic) BOOL autorotate;
+- (void)layoutSubviews;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+SWIFT_CLASS("_TtC7Verifie29VerifieViewControllersConfigs")
+@interface VerifieViewControllersConfigs : NSObject
+- (nonnull instancetype)initWithDocumentScannerViewController:(id <VerifieDocScannerViewControllerInterface> _Nullable)documentScannerViewController humanDetectorViewController:(id <VerifieHumanDetectorViewControllerInterface> _Nullable)humanDetectorViewController OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
