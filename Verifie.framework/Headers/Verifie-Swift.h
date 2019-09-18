@@ -200,12 +200,21 @@ SWIFT_PROTOCOL("_TtP7Verifie39DocScannerViewControllerActionsDelegate_")
 @end
 
 
+@interface NSError (SWIFT_EXTENSION(Verifie))
+/// Returns user info for Verifie error. Use only for Objective-C calls
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nullable verifieUserInfo;
+@end
 
 
 
+
+
+@class VerifieConfigs;
+@protocol VerifieDelegate;
 
 SWIFT_CLASS("_TtC7Verifie7Verifie")
 @interface Verifie : NSObject
+- (nonnull instancetype)initWithConfigs:(VerifieConfigs * _Nonnull)configs delegate:(id <VerifieDelegate> _Nonnull)delegate OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 - (void)start;
@@ -239,11 +248,34 @@ SWIFT_PROTOCOL("_TtP7Verifie33VerifieBaseViewControllerDelegate_")
 - (void)viewControllerViewDidLoad:(VerifieBaseViewController * _Nonnull)sender;
 @end
 
+@class UIColor;
+
+SWIFT_CLASS("_TtC7Verifie19VerifieColorConfigs")
+@interface VerifieColorConfigs : NSObject
+- (nonnull instancetype)initWithDocCropperFrameColor:(UIColor * _Nonnull)docCropperFrameColor OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class VerifieTextConfigs;
+@class VerifieViewControllersConfigs;
 
 SWIFT_CLASS("_TtC7Verifie14VerifieConfigs")
 @interface VerifieConfigs : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+- (nonnull instancetype)initWithLicenseKey:(NSString * _Nonnull)licenseKey personId:(NSString * _Nullable)personId languageCode:(NSString * _Nonnull)languageCode textConfigs:(VerifieTextConfigs * _Nonnull)textConfigs colorConfigs:(VerifieColorConfigs * _Nullable)colorConfigs viewControllersConfigs:(VerifieViewControllersConfigs * _Nullable)viewControllersConfigs OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class VerifieDocument;
+@class VerifieScore;
+
+SWIFT_PROTOCOL("_TtP7Verifie15VerifieDelegate_")
+@protocol VerifieDelegate
+- (void)verifie:(Verifie * _Nonnull)sender didFailWith:(NSError * _Nonnull)error;
+- (UIViewController * _Nonnull)viewControllerToPresent:(Verifie * _Nonnull)sender SWIFT_WARN_UNUSED_RESULT;
+- (void)verifie:(Verifie * _Nonnull)sender didReceive:(VerifieDocument * _Nonnull)document;
+- (void)verifie:(Verifie * _Nonnull)sender didCalculate:(VerifieScore * _Nonnull)score;
 @end
 
 @class UIView;
@@ -261,10 +293,29 @@ SWIFT_PROTOCOL("_TtP7Verifie40VerifieDocScannerViewControllerInterface_")
 @end
 
 
+SWIFT_CLASS("_TtC7Verifie15VerifieDocument")
+@interface VerifieDocument : NSObject
+@end
+
+
 SWIFT_PROTOCOL("_TtP7Verifie43VerifieHumanDetectorViewControllerInterface_")
 @protocol VerifieHumanDetectorViewControllerInterface <VerifieViewControllerInterface>
 @property (nonatomic, strong) VerifieVideoSessionPreviewView * _Null_unspecified previewView;
 - (void)updateWithStatusText:(NSString * _Nonnull)text;
+@end
+
+
+SWIFT_CLASS("_TtC7Verifie12VerifieScore")
+@interface VerifieScore : NSObject
+@end
+
+
+SWIFT_CLASS("_TtC7Verifie18VerifieTextConfigs")
+@interface VerifieTextConfigs : NSObject
+- (nonnull instancetype)initWithMovePhoneCloser:(NSString * _Nonnull)movePhoneCloser movePhoneAway:(NSString * _Nonnull)movePhoneAway blinkEyes:(NSString * _Nonnull)blinkEyes alignTap:(NSString * _Nonnull)alignTap idBackside:(NSString * _Nonnull)idBackside faceFailed:(NSString * _Nonnull)faceFailed eyesFailed:(NSString * _Nonnull)eyesFailed OBJC_DESIGNATED_INITIALIZER;
++ (VerifieTextConfigs * _Nonnull)default SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 @class AVCaptureVideoPreviewLayer;

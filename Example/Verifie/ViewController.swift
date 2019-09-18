@@ -13,18 +13,25 @@ class ViewController: UIViewController {
     
     var verifie: Verifie!
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var imageView1: UIImageView!
     @IBOutlet weak var textView: UITextView!
     
-    var score: Score!
-    var documents: [Document] = []
+    var score: VerifieScore!
+    var documents: [VerifieDocument] = []
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
+//        let documentScannerViewController: CustomDocScannerViewController = CustomDocScannerViewController.load(from: .main)
+//        let humanDetectorViewController: CustomHumanDetectorViewController = CustomHumanDetectorViewController.load(from: .main)
+//        let viewControllersConfigs = VerifieViewControllersConfigs(documentScannerViewController: documentScannerViewController,
+//                                                                   humanDetectorViewController: humanDetectorViewController)
+        
         let configs = VerifieConfigs(licenseKey: "5d3f2e38-fe7c-43c6-b532-db9b57e674f8",
-                                     personId: "12")
+                                     personId: "12",
+                                     textConfigs: VerifieTextConfigs.default(),
+                                     colorConfigs: nil,
+                                     viewControllersConfigs: /*viewControllersConfigs*/ nil)
         
         verifie = Verifie(configs: configs, delegate: self)
         
@@ -56,18 +63,18 @@ class ViewController: UIViewController {
 
 extension ViewController: VerifieDelegate {
     
-    func verifie(_ sender: Verifie, didReceive document: Document) {
+    func verifie(_ sender: Verifie, didReceive document: VerifieDocument) {
         
         documents.append(document)
     }
     
-    func verifie(_ sender: Verifie, didCalculate score: Score) {
+    func verifie(_ sender: Verifie, didCalculate score: VerifieScore) {
         
         self.score = score
         
         sender.stop()
         
-        //TODO: Remove
+        
         var fullText = "\(String(describing: score))\n\n"
         
         for document in documents {
@@ -82,21 +89,9 @@ extension ViewController: VerifieDelegate {
         }
         
         textView.text = fullText
-        
-        if
-            let imageStr: String = UserDefaults.standard.string(forKey: "humanImage"),
-            let imageData = Data(base64Encoded: imageStr) {
-            
-            let image = UIImage(data: imageData)
-            imageView1.image = image
-        }
-        
-        UserDefaults.standard.removeObject(forKey: "humanImage")
-        UserDefaults.standard.synchronize()
-        //
     }
     
-    func verifie(_ sender: Verifie, didFailWith error: VerifieError) {
+    func verifie(_ sender: Verifie, didFailWith error: Error) {
         
         showAlert(with: error.localizedDescription)
     }
@@ -106,7 +101,6 @@ extension ViewController: VerifieDelegate {
         return self
     }
 }
-
 
 extension UIApplication {
     
@@ -124,5 +118,24 @@ extension UIApplication {
             return topViewController(controller: presented)
         }
         return controller
+    }
+}
+
+
+public enum Storyboard: String {
+    
+    case main = "Main"
+}
+
+public extension UIViewController {
+    
+    static func load<T: UIViewController>(from storyboard: Storyboard = .main) -> T {
+        
+        let bundle = Bundle.main
+        let storyboard = UIStoryboard(name: storyboard.rawValue, bundle: bundle)
+        let selfName = String(describing: self)
+        let viewController = storyboard.instantiateViewController(withIdentifier: selfName) as! T
+        
+        return viewController
     }
 }
