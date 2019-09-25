@@ -13,6 +13,7 @@ import Verifie
 
 @objcMembers class CustomHumanDetectorViewController: VerifieBaseViewController,
                                                     VerifieHumanDetectorViewControllerInterface {
+    
 
     @IBOutlet weak var previewView: VerifieVideoSessionPreviewView! {
         didSet {
@@ -20,6 +21,8 @@ import Verifie
         }
     }
     @IBOutlet private weak var statusLabel: UILabel!
+    
+    var actionsDelegate: HumanDetectorViewControllerActionsDelegate?
     
     
     //    MARK: Lifecycle Functions

@@ -22,16 +22,18 @@ class ViewController: UIViewController {
         
         super.viewDidLoad()
         
-//        let documentScannerViewController: CustomDocScannerViewController = CustomDocScannerViewController.load(from: .main)
-//        let humanDetectorViewController: CustomHumanDetectorViewController = CustomHumanDetectorViewController.load(from: .main)
-//        let viewControllersConfigs = VerifieViewControllersConfigs(documentScannerViewController: documentScannerViewController,
-//                                                                   humanDetectorViewController: humanDetectorViewController)
+        //        let documentScannerViewController: CustomDocScannerViewController = CustomDocScannerViewController.load(from: .main)
+        //        let humanDetectorViewController: CustomHumanDetectorViewController = CustomHumanDetectorViewController.load(from: .main)
+        //        let viewControllersConfigs = VerifieViewControllersConfigs(documentScannerViewController: documentScannerViewController,
+        //                                                                   humanDetectorViewController: humanDetectorViewController)
         
+        let documentScannerConfigs = VerifieDocumentScannerConfigs.default()
         let configs = VerifieConfigs(licenseKey: "5d3f2e38-fe7c-43c6-b532-db9b57e674f8",
                                      personId: "12",
+                                     documentType: .passport,
                                      textConfigs: VerifieTextConfigs.default(),
-                                     colorConfigs: nil,
-                                     viewControllersConfigs: /*viewControllersConfigs*/ nil)
+                                     viewControllersConfigs: /*viewControllersConfigs*/ nil,
+                                     documentScannerConfigs: documentScannerConfigs)
         
         verifie = Verifie(configs: configs, delegate: self)
         
@@ -65,10 +67,26 @@ extension ViewController: VerifieDelegate {
     
     func verifie(_ sender: Verifie, didReceive document: VerifieDocument) {
         
+        if
+            let documentImage = document.documentImage,
+            let imageData = Data(base64Encoded: documentImage) {
+            let image = UIImage(data: imageData)
+            
+            print("\(String(describing: image))")
+        }
+        
         documents.append(document)
     }
     
     func verifie(_ sender: Verifie, didCalculate score: VerifieScore) {
+        
+        if
+            let faceImage = score.faceImage,
+            let imageData = Data(base64Encoded: faceImage) {
+            let image = UIImage(data: imageData)
+            
+            print("\(String(describing: image))")
+        }
         
         self.score = score
         
@@ -79,9 +97,11 @@ extension ViewController: VerifieDelegate {
         
         for document in documents {
             
-            if let imageString = document.documentFaceImage, let imageData = Data(base64Encoded: imageString) {
+            if
+                let imageString = document.documentFaceImage,
+                let imageData = Data(base64Encoded: imageString),
+                let image = UIImage(data: imageData) {
                 
-                let image = UIImage(data: imageData)
                 imageView.image = image
             }
             
@@ -99,6 +119,11 @@ extension ViewController: VerifieDelegate {
     func viewControllerToPresent(_ sender: Verifie) -> UIViewController {
         
         return self
+    }
+    
+    func verifieDidFinish(_ sender: Verifie) {
+        
+        print("Verifie did finish job!")
     }
 }
 

@@ -197,6 +197,14 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 SWIFT_PROTOCOL("_TtP7Verifie39DocScannerViewControllerActionsDelegate_")
 @protocol DocScannerViewControllerActionsDelegate
 - (void)didPressCaptureButtonDocScannerViewController:(id <VerifieDocScannerViewControllerInterface> _Nonnull)sender;
+- (void)didPressCloseButtonDocScannerViewController:(id <VerifieDocScannerViewControllerInterface> _Nonnull)sender;
+@end
+
+@protocol VerifieHumanDetectorViewControllerInterface;
+
+SWIFT_PROTOCOL("_TtP7Verifie42HumanDetectorViewControllerActionsDelegate_")
+@protocol HumanDetectorViewControllerActionsDelegate
+- (void)didPressCloseButtonHumanDetectorViewController:(id <VerifieHumanDetectorViewControllerInterface> _Nonnull)sender;
 @end
 
 
@@ -252,19 +260,39 @@ SWIFT_PROTOCOL("_TtP7Verifie33VerifieBaseViewControllerDelegate_")
 
 SWIFT_CLASS("_TtC7Verifie19VerifieColorConfigs")
 @interface VerifieColorConfigs : NSObject
+/// Color for the document cropper frame and the text above. Default <code>.white</code>
+@property (nonatomic, readonly, strong) UIColor * _Nonnull docCropperFrameColor;
 - (nonnull instancetype)initWithDocCropperFrameColor:(UIColor * _Nonnull)docCropperFrameColor OBJC_DESIGNATED_INITIALIZER;
++ (VerifieColorConfigs * _Nonnull)default SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+enum VerifieDocumentType : NSInteger;
 @class VerifieTextConfigs;
 @class VerifieViewControllersConfigs;
+@class VerifieDocumentScannerConfigs;
 
 SWIFT_CLASS("_TtC7Verifie14VerifieConfigs")
 @interface VerifieConfigs : NSObject
+/// License key for authorization
+@property (nonatomic, readonly, copy) NSString * _Nonnull licenseKey;
+/// Person unique Id for identification
+@property (nonatomic, readonly, copy) NSString * _Nullable personId;
+/// Document type that should scan the scanner. Default <code>.unknown</code>
+@property (nonatomic, readonly) enum VerifieDocumentType documentType;
+/// Language ISO code. Default <code>ENG</code>
+@property (nonatomic, readonly, copy) NSString * _Nonnull languageCode;
+/// Visible texts configuration
+@property (nonatomic, readonly, strong) VerifieTextConfigs * _Nonnull textConfigs;
+/// Colors configuration
+@property (nonatomic, readonly, strong) VerifieColorConfigs * _Nonnull colorConfigs;
+@property (nonatomic, readonly, strong) VerifieViewControllersConfigs * _Nullable viewControllersConfigs;
+/// Configurations for document scanner
+@property (nonatomic, readonly, strong) VerifieDocumentScannerConfigs * _Nonnull documentScannerConfigs;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-- (nonnull instancetype)initWithLicenseKey:(NSString * _Nonnull)licenseKey personId:(NSString * _Nullable)personId languageCode:(NSString * _Nonnull)languageCode textConfigs:(VerifieTextConfigs * _Nonnull)textConfigs colorConfigs:(VerifieColorConfigs * _Nullable)colorConfigs viewControllersConfigs:(VerifieViewControllersConfigs * _Nullable)viewControllersConfigs OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithLicenseKey:(NSString * _Nonnull)licenseKey personId:(NSString * _Nullable)personId documentType:(enum VerifieDocumentType)documentType languageCode:(NSString * _Nonnull)languageCode textConfigs:(VerifieTextConfigs * _Nonnull)textConfigs colorConfigs:(VerifieColorConfigs * _Nonnull)colorConfigs viewControllersConfigs:(VerifieViewControllersConfigs * _Nullable)viewControllersConfigs documentScannerConfigs:(VerifieDocumentScannerConfigs * _Nonnull)documentScannerConfigs OBJC_DESIGNATED_INITIALIZER;
 @end
 
 @class VerifieDocument;
@@ -276,6 +304,7 @@ SWIFT_PROTOCOL("_TtP7Verifie15VerifieDelegate_")
 - (UIViewController * _Nonnull)viewControllerToPresent:(Verifie * _Nonnull)sender SWIFT_WARN_UNUSED_RESULT;
 - (void)verifie:(Verifie * _Nonnull)sender didReceive:(VerifieDocument * _Nonnull)document;
 - (void)verifie:(Verifie * _Nonnull)sender didCalculate:(VerifieScore * _Nonnull)score;
+- (void)verifieDidFinish:(Verifie * _Nonnull)sender;
 @end
 
 @class UIView;
@@ -297,10 +326,40 @@ SWIFT_CLASS("_TtC7Verifie15VerifieDocument")
 @interface VerifieDocument : NSObject
 @end
 
+typedef SWIFT_ENUM(NSInteger, VerifieDocumentImageType, closed) {
+  VerifieDocumentImageTypePassport = 0,
+  VerifieDocumentImageTypeIdCard = 1,
+  VerifieDocumentImageTypeIdCardBackside = 2,
+};
+
+enum ScannerOrientation : NSInteger;
+
+SWIFT_CLASS("_TtC7Verifie29VerifieDocumentScannerConfigs")
+@interface VerifieDocumentScannerConfigs : NSObject
+/// Document scanner’s orientation
+@property (nonatomic, readonly) enum ScannerOrientation scannerOrientation;
+- (nonnull instancetype)initWithScannerOrientation:(enum ScannerOrientation)scannerOrientation OBJC_DESIGNATED_INITIALIZER;
++ (VerifieDocumentScannerConfigs * _Nonnull)default SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+typedef SWIFT_ENUM(NSInteger, ScannerOrientation, closed) {
+  ScannerOrientationPortrait = 0,
+  ScannerOrientationLandscape = 1,
+};
+
+typedef SWIFT_ENUM(NSInteger, VerifieDocumentType, closed) {
+  VerifieDocumentTypeUnknown = 0,
+  VerifieDocumentTypePassport = 1,
+  VerifieDocumentTypeIdCard = 2,
+};
+
 
 SWIFT_PROTOCOL("_TtP7Verifie43VerifieHumanDetectorViewControllerInterface_")
 @protocol VerifieHumanDetectorViewControllerInterface <VerifieViewControllerInterface>
 @property (nonatomic, strong) VerifieVideoSessionPreviewView * _Null_unspecified previewView;
+@property (nonatomic, strong) id <HumanDetectorViewControllerActionsDelegate> _Nullable actionsDelegate;
 - (void)updateWithStatusText:(NSString * _Nonnull)text;
 @end
 
@@ -312,7 +371,20 @@ SWIFT_CLASS("_TtC7Verifie12VerifieScore")
 
 SWIFT_CLASS("_TtC7Verifie18VerifieTextConfigs")
 @interface VerifieTextConfigs : NSObject
-- (nonnull instancetype)initWithMovePhoneCloser:(NSString * _Nonnull)movePhoneCloser movePhoneAway:(NSString * _Nonnull)movePhoneAway blinkEyes:(NSString * _Nonnull)blinkEyes alignTap:(NSString * _Nonnull)alignTap idBackside:(NSString * _Nonnull)idBackside faceFailed:(NSString * _Nonnull)faceFailed eyesFailed:(NSString * _Nonnull)eyesFailed OBJC_DESIGNATED_INITIALIZER;
+/// Move phone closer text. Default <code>Move phone closer</code>
+@property (nonatomic, readonly, copy) NSString * _Nonnull movePhoneCloser;
+/// Move phone away text. Default <code>Move phone away</code>
+@property (nonatomic, readonly, copy) NSString * _Nonnull movePhoneAway;
+/// Blink eyes closer text. Default <code>Blink eyes</code>
+@property (nonatomic, readonly, copy) NSString * _Nonnull blinkEyes;
+/// Align and Tap text. Default <code>Align and Tap</code>
+@property (nonatomic, readonly, copy) NSString * _Nonnull alignTap;
+/// Backside of ID text. Default <code>Backside of ID</code>
+@property (nonatomic, readonly, copy) NSString * _Nonnull idBackside;
+@property (nonatomic, readonly, copy) NSString * _Nonnull faceFailed;
+@property (nonatomic, readonly, copy) NSString * _Nonnull eyesFailed;
+@property (nonatomic, readonly, copy) NSString * _Nonnull wrongDocumentType;
+- (nonnull instancetype)initWithMovePhoneCloser:(NSString * _Nonnull)movePhoneCloser movePhoneAway:(NSString * _Nonnull)movePhoneAway blinkEyes:(NSString * _Nonnull)blinkEyes alignTap:(NSString * _Nonnull)alignTap idBackside:(NSString * _Nonnull)idBackside faceFailed:(NSString * _Nonnull)faceFailed eyesFailed:(NSString * _Nonnull)eyesFailed wrongDocumentType:(NSString * _Nonnull)wrongDocumentType OBJC_DESIGNATED_INITIALIZER;
 + (VerifieTextConfigs * _Nonnull)default SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -334,6 +406,10 @@ SWIFT_CLASS("_TtC7Verifie30VerifieVideoSessionPreviewView")
 
 SWIFT_CLASS("_TtC7Verifie29VerifieViewControllersConfigs")
 @interface VerifieViewControllersConfigs : NSObject
+/// Document scanner view controller
+@property (nonatomic, readonly, strong) id <VerifieDocScannerViewControllerInterface> _Nullable documentScannerViewController;
+/// Human Detector view controller
+@property (nonatomic, readonly, strong) id <VerifieHumanDetectorViewControllerInterface> _Nullable humanDetectorViewController;
 - (nonnull instancetype)initWithDocumentScannerViewController:(id <VerifieDocScannerViewControllerInterface> _Nullable)documentScannerViewController humanDetectorViewController:(id <VerifieHumanDetectorViewControllerInterface> _Nullable)humanDetectorViewController OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
