@@ -1,7 +1,7 @@
 PODS:
   - Alamofire (5.0.0-rc.3)
   - SVProgressHUD (2.2.5)
-  - Verifie (0.1.5):
+  - Verifie (0.1.6):
     - Alamofire (~> 5.0.0-rc.2)
     - SVProgressHUD
 
@@ -20,7 +20,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  Verifie: c458555b83c85972c29b0138f0c44d027ee9fe85
+  Verifie: 2c6cca749faeecd07b886b9562771d83597142b8
 
 PODFILE CHECKSUM: c62427e126a7306cbf12d5b961af08d145f18197
 
