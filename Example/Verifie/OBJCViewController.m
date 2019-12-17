@@ -19,7 +19,7 @@
 @implementation OBJCViewController
 
 - (void)viewDidLoad {
-    
+
     [super viewDidLoad];
     
     VerifieTextConfigs *verifieTextConfigs = [VerifieTextConfigs default];
@@ -27,33 +27,35 @@
     CustomDocScannerViewController *documentScannerViewController = (CustomDocScannerViewController *)[self viewControllerWithClass:[CustomDocScannerViewController class] inStoryboard:@"Main"];
     CustomHumanDetectorViewController *humanDetectorViewController = (CustomHumanDetectorViewController *)[self viewControllerWithClass:[CustomHumanDetectorViewController class] inStoryboard:@"Main"];
     VerifieViewControllersConfigs *verifieViewControllersConfigs = [[VerifieViewControllersConfigs alloc] initWithDocumentScannerViewController:documentScannerViewController
-                                                                                                                    humanDetectorViewController:humanDetectorViewController];
-    VerifieDocumentScannerConfigs *verifieDocumentScannerConfigs = [[VerifieDocumentScannerConfigs alloc] initWithScannerOrientation:ScannerOrientationLandscape];
+                                                                                                                    humanDetectorViewController:humanDetectorViewController
+                                                                                                                  recommendationsViewController: nil
+                                                                                                                  docInstructionsViewController: nil];
+    VerifieDocumentScannerConfigs *verifieDocumentScannerConfigs = [[VerifieDocumentScannerConfigs alloc] initWithScannerOrientation:ScannerOrientationLandscape
+                                                                                                                        documentType:VerifieDocumentTypeUnknown];
     
     VerifieConfigs *extractedExpr = [[VerifieConfigs alloc] initWithLicenseKey:@"5d3f2e38-fe7c-43c6-b532-db9b57e674f8"
                                                                       personId:@"12"
-                                                                  documentType: VerifieDocumentTypeUnknown
                                                                   languageCode:@"ENG"
                                                                    textConfigs:verifieTextConfigs
                                                                   colorConfigs:colorConfigs
                                                         viewControllersConfigs:verifieViewControllersConfigs
                                                         documentScannerConfigs:verifieDocumentScannerConfigs];
     VerifieConfigs *verifieConfigs = extractedExpr;
-    
+
     self.verifie = [[Verifie alloc] initWithConfigs:verifieConfigs delegate:self];
-    
+
     [self.verifie start];
 }
 
 
 #pragma mark - VerifieDelegate
 - (void)verifie:(Verifie *)sender didFailWith:(NSError *)error {
-    
+
     NSLog(@"%li: %@", (long)error.code, error.verifieUserInfo);
 }
 
 - (UIViewController * _Nonnull)viewControllerToPresent:(Verifie * _Nonnull)sender {
-    
+
     return self;
 }
 

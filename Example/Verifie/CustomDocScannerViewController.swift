@@ -12,7 +12,11 @@ import Verifie
 @objc(CustomDocScannerViewController)
 
 @objcMembers class CustomDocScannerViewController: VerifieBaseViewController,
-                                                    VerifieDocScannerViewControllerInterface {
+VerifieDocScannerViewControllerInterface {
+    var instructionsTitleLabel: UILabel!
+    
+    var instructionsSubtitleLabel: UILabel!
+    
     
     @IBOutlet weak var videoPreviewView: VerifieVideoSessionPreviewView! {
         didSet {
@@ -43,6 +47,12 @@ import Verifie
 
         croppingAreaImageView.tintColor = color
         instructionsLabel.textColor = color
+    }
+    
+    func updateText(with textConigs: VerifieDocumentScannerTextConfigs,
+                    documentType: VerifieDocumentType,
+                    pageNumber: DocPageNumber) {
+        
     }
 
 

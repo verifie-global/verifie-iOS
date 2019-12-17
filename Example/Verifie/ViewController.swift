@@ -30,7 +30,6 @@ class ViewController: UIViewController {
         let documentScannerConfigs = VerifieDocumentScannerConfigs.default()
         let configs = VerifieConfigs(licenseKey: "5d3f2e38-fe7c-43c6-b532-db9b57e674f8",
                                      personId: "12",
-                                     documentType: .passport,
                                      textConfigs: VerifieTextConfigs.default(),
                                      viewControllersConfigs: /*viewControllersConfigs*/ nil,
                                      documentScannerConfigs: documentScannerConfigs)
