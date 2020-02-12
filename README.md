@@ -23,15 +23,7 @@ source 'https://github.com/verifie-global/pod-specs.git'
 #### Set privacy settings
 - In your project's `Info.plist` file add these keys:  
 
-**Key:** `NSMicrophoneUsageDescription`  
-**Type:** `String`  
-**Value:** `Usage description...`
-
-**Key:** `NSPhotoLibraryAddUsageDescription`  
-**Type:** `String`  
-**Value:** `Usage description...`
-
-**Key:** `NSPhotoLibraryUsageDescription`  
+**Key:** `NSCameraUsageDescription`  
 **Type:** `String`  
 **Value:** `Usage description...`
 
