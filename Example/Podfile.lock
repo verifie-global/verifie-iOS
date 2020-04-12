@@ -1,8 +1,8 @@
 PODS:
-  - Alamofire (5.0.0-rc.3)
+  - Alamofire (5.1.0)
   - SVProgressHUD (2.2.5)
-  - Verifie (0.2.0):
-    - Alamofire (~> 5.0.0-rc.3)
+  - Verifie (0.2.2):
+    - Alamofire (~> 5.1)
     - SVProgressHUD
 
 DEPENDENCIES:
@@ -18,9 +18,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
+  Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  Verifie: ad9fd9075f81918de2ed28e4328becccc5739873
+  Verifie: e52a0ca3ddde62f63b99bd2fe0958662960bb313
 
 PODFILE CHECKSUM: c62427e126a7306cbf12d5b961af08d145f18197
 

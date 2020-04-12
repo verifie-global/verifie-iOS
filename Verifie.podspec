@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Verifie'
-  s.version          = '0.2.1'
+  s.version          = '0.2.2'
   s.summary          = 'A short description of Verifie.'
 
   s.description      = <<-DESC
@@ -19,6 +19,6 @@ TODO: Add long description of the pod here.
   s.vendored_frameworks = 'Verifie.framework'
   s.preserve_paths = '*.framework'
   
-  s.dependency 'Alamofire', '~> 5.0.0-rc.3'
+  s.dependency 'Alamofire', '~> 5.1'
   s.dependency 'SVProgressHUD'  
 end
