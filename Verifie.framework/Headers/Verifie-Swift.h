@@ -537,13 +537,9 @@ SWIFT_CLASS("_TtC7Verifie18VerifieTextConfigs")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@class AVCaptureVideoPreviewLayer;
 
-SWIFT_CLASS("_TtC7Verifie30VerifieVideoSessionPreviewView")
+SWIFT_CLASS_NAMED("VerifieVideoSessionPreviewView")
 @interface VerifieVideoSessionPreviewView : UIView
-@property (nonatomic, strong) AVCaptureVideoPreviewLayer * _Nullable previewLayer;
-/// Should automatically rotate video or not
-@property (nonatomic) BOOL autorotate;
 - (void)layoutSubviews;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
