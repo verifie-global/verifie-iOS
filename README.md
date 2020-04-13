@@ -15,7 +15,7 @@ source 'https://github.com/verifie-global/pod-specs.git'
 
 - Then add the following line to your Podfile:
 
-```pod 'Verifie', '~> 0.2.2'```
+```pod 'Verifie', '~> 0.2.3'```
 
 - Run `pod install`
 
