@@ -27,15 +27,28 @@ class ViewController: UIViewController {
         //        let viewControllersConfigs = VerifieViewControllersConfigs(documentScannerViewController: documentScannerViewController,
         //                                                                   humanDetectorViewController: humanDetectorViewController)
         
-        let documentScannerConfigs = VerifieDocumentScannerConfigs.default()
+//        let documentScannerConfigs = VerifieDocumentScannerConfigs.default()
+//        let configs = VerifieConfigs(licenseKey: "5d3f2e38-fe7c-43c6-b532-db9b57e674f8",
+//                                     personId: "12",
+//                                     textConfigs: VerifieTextConfigs.default(),
+//                                     viewControllersConfigs: /*viewControllersConfigs*/ nil,
+//                                     documentScannerConfigs: documentScannerConfigs)
+//
+//        verifie = Verifie(configs: configs, delegate: self)
+//
+//        verifie.start()
+        
+        
+        let documentScannerConfigs =
+            VerifieDocumentScannerConfigs(scannerOrientation: .portrait,
+                                          documentType: .passport)
+        
         let configs = VerifieConfigs(licenseKey: "5d3f2e38-fe7c-43c6-b532-db9b57e674f8",
                                      personId: "12",
-                                     textConfigs: VerifieTextConfigs.default(),
-                                     viewControllersConfigs: /*viewControllersConfigs*/ nil,
+                                     viewControllersConfigs: nil,
                                      documentScannerConfigs: documentScannerConfigs)
         
         verifie = Verifie(configs: configs, delegate: self)
-        
         verifie.start()
     }
     

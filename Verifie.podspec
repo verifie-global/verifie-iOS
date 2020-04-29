@@ -20,7 +20,7 @@ TODO: Add long description of the pod here.
   s.preserve_paths = '*.framework'
   
   s.dependency 'Alamofire', '~> 5.1'
-  s.dependency 'SVProgressHUD'
-  s.dependency 'QKMRZParser'
-  s.dependency 'SwiftyTesseract'
+  s.dependency 'SVProgressHUD', '~> 2.2.5'
+  s.dependency 'QKMRZParser', '~> 1.0.1'
+  s.dependency 'SwiftyTesseract', '~> 3.0.0'
 end
