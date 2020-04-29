@@ -39,6 +39,10 @@ import Verifie
         statusLabel.text = text
     }
     
+    func update(_ progress: Double) {
+        
+    }
+    
     
     //    MARK: - Private Functions
     private func attemptRotationToPortrait() {

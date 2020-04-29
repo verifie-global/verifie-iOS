@@ -1,9 +1,13 @@
 PODS:
   - Alamofire (5.1.0)
+  - QKMRZParser (1.0.1)
   - SVProgressHUD (2.2.5)
-  - Verifie (0.2.2):
+  - SwiftyTesseract (3.0.0)
+  - Verifie (0.3.0):
     - Alamofire (~> 5.1)
+    - QKMRZParser
     - SVProgressHUD
+    - SwiftyTesseract
 
 DEPENDENCIES:
   - Verifie (from `../`)
@@ -11,7 +15,9 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - QKMRZParser
     - SVProgressHUD
+    - SwiftyTesseract
 
 EXTERNAL SOURCES:
   Verifie:
@@ -19,9 +25,11 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
+  QKMRZParser: 07921dbffa7e4064406113731bc0f1f5e6210bce
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  Verifie: e52a0ca3ddde62f63b99bd2fe0958662960bb313
+  SwiftyTesseract: acce13d69fb5c5b10e77a6df7fa76b16ac1e282b
+  Verifie: f7302db1252f789904a4a9443e3f4088724f592a
 
 PODFILE CHECKSUM: c62427e126a7306cbf12d5b961af08d145f18197
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.1

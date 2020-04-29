@@ -66,6 +66,5 @@ VerifieDocScannerViewControllerInterface {
     //    MARK: Action Functions
     @IBAction private func captureButtonAction(_ sender: Any) {
 
-        actionsDelegate?.didPressCaptureButtonDocScannerViewController(self)
     }
 }
