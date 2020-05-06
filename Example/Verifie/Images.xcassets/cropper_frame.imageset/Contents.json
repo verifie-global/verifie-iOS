@@ -1,32 +1,32 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
-      "filename" : "Artboard_portrait.pdf"
+      "filename" : "Artboard_portrait.pdf",
+      "idiom" : "universal"
     },
     {
-      "idiom" : "universal",
       "filename" : "Artboard-1.pdf",
-      "height-class" : "compact"
+      "height-class" : "compact",
+      "idiom" : "universal"
     },
     {
-      "idiom" : "universal",
       "filename" : "Artboard.pdf",
+      "idiom" : "universal",
       "width-class" : "regular"
     },
     {
-      "idiom" : "universal",
       "filename" : "Artboard-2.pdf",
-      "width-class" : "regular",
-      "height-class" : "compact"
+      "height-class" : "compact",
+      "idiom" : "universal",
+      "width-class" : "regular"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   },
   "properties" : {
-    "template-rendering-intent" : "template",
-    "preserves-vector-representation" : true
+    "preserves-vector-representation" : true,
+    "template-rendering-intent" : "template"
   }
 }

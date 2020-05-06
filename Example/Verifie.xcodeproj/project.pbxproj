@@ -7,18 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		170B09FE246296FA00AA2FAB /* VerificationResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715930F246295DE004C165D /* VerificationResultViewController.swift */; };
+		170B09FF2462970100AA2FAB /* ImagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715931524629604004C165D /* ImagesTableViewCell.swift */; };
+		1715930B246295BE004C165D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715930A246295AF004C165D /* MainViewController.swift */; };
+		17159312246295EA004C165D /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17159311246295EA004C165D /* InfoTableViewCell.swift */; };
+		1715931824629626004C165D /* DocumentTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715931724629626004C165D /* DocumentTypeViewController.swift */; };
 		176FBBAB2332A6CD00141263 /* OBJCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 176FBBAA2332A6CD00141263 /* OBJCViewController.m */; };
 		176FBBAC2332A6CD00141263 /* CustomDocScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176FBBA92332A6CD00141263 /* CustomDocScannerViewController.swift */; };
 		176FBBAD2332A6CD00141263 /* CustomHumanDetectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176FBBA82332A6CD00141263 /* CustomHumanDetectorViewController.swift */; };
 		179710332365F943001C92B5 /* Pods_Verifie_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B37637A974104FDD74F0A3C /* Pods_Verifie_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1715930A246295AF004C165D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		1715930F246295DE004C165D /* VerificationResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationResultViewController.swift; sourceTree = "<group>"; };
+		17159311246295EA004C165D /* InfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
+		1715931524629604004C165D /* ImagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesTableViewCell.swift; sourceTree = "<group>"; };
+		1715931724629626004C165D /* DocumentTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentTypeViewController.swift; sourceTree = "<group>"; };
 		176FBBA72332A6CC00141263 /* OBJCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBJCViewController.h; sourceTree = "<group>"; };
 		176FBBA82332A6CD00141263 /* CustomHumanDetectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHumanDetectorViewController.swift; sourceTree = "<group>"; };
 		176FBBA92332A6CD00141263 /* CustomDocScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDocScannerViewController.swift; sourceTree = "<group>"; };
@@ -26,7 +35,6 @@
 		607FACD01AFB9204008FA782 /* Verifie_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Verifie_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -52,6 +60,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1715930C246295C4004C165D /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1715931624629621004C165D /* Document Type */,
+				1715930E246295DA004C165D /* Verification Result */,
+				1715930D246295CD004C165D /* Main */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		1715930D246295CD004C165D /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				1715930A246295AF004C165D /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		1715930E246295DA004C165D /* Verification Result */ = {
+			isa = PBXGroup;
+			children = (
+				17159310246295E1004C165D /* Cell */,
+				1715930F246295DE004C165D /* VerificationResultViewController.swift */,
+			);
+			path = "Verification Result";
+			sourceTree = "<group>";
+		};
+		17159310246295E1004C165D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1715931424629601004C165D /* Images */,
+				17159313246295F7004C165D /* Info */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		17159313246295F7004C165D /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				17159311246295EA004C165D /* InfoTableViewCell.swift */,
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
+		1715931424629601004C165D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				1715931524629604004C165D /* ImagesTableViewCell.swift */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		1715931624629621004C165D /* Document Type */ = {
+			isa = PBXGroup;
+			children = (
+				1715931724629626004C165D /* DocumentTypeViewController.swift */,
+			);
+			path = "Document Type";
+			sourceTree = "<group>";
+		};
 		4339DBEEC4E9229D01017EFD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -84,12 +152,12 @@
 		607FACD21AFB9204008FA782 /* Example for Verifie */ = {
 			isa = PBXGroup;
 			children = (
+				1715930C246295C4004C165D /* View Controllers */,
 				176FBBA92332A6CD00141263 /* CustomDocScannerViewController.swift */,
 				176FBBA82332A6CD00141263 /* CustomHumanDetectorViewController.swift */,
 				176FBBA72332A6CC00141263 /* OBJCViewController.h */,
 				176FBBAA2332A6CD00141263 /* OBJCViewController.m */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -252,11 +320,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				176FBBAD2332A6CD00141263 /* CustomHumanDetectorViewController.swift in Sources */,
 				176FBBAC2332A6CD00141263 /* CustomDocScannerViewController.swift in Sources */,
+				1715930B246295BE004C165D /* MainViewController.swift in Sources */,
+				170B09FE246296FA00AA2FAB /* VerificationResultViewController.swift in Sources */,
+				17159312246295EA004C165D /* InfoTableViewCell.swift in Sources */,
 				176FBBAB2332A6CD00141263 /* OBJCViewController.m in Sources */,
+				1715931824629626004C165D /* DocumentTypeViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				170B09FF2462970100AA2FAB /* ImagesTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +472,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -418,6 +491,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
