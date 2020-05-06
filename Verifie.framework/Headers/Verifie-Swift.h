@@ -258,6 +258,14 @@ SWIFT_PROTOCOL("_TtP7Verifie44RecommendationsViewControllerActionsDelegate_")
 - (void)didPressContinueButtonRecommendationsViewController:(id <VerifieRecommendationsViewControllerInterface> _Nonnull)sender;
 @end
 
+@protocol VerifieSecondDocInfoViewControllerInterface;
+
+SWIFT_PROTOCOL("_TtP7Verifie42SecondDocInfoViewControllerActionsDelegate_")
+@protocol SecondDocInfoViewControllerActionsDelegate
+- (void)didPressCloseSecondDocInfoViewController:(id <VerifieSecondDocInfoViewControllerInterface> _Nonnull)sender;
+- (void)didPressContinueSecondDocInfoViewController:(id <VerifieSecondDocInfoViewControllerInterface> _Nonnull)sender;
+@end
+
 
 
 
@@ -516,6 +524,13 @@ SWIFT_CLASS("_TtC7Verifie12VerifieScore")
 @end
 
 
+SWIFT_PROTOCOL("_TtP7Verifie43VerifieSecondDocInfoViewControllerInterface_")
+@protocol VerifieSecondDocInfoViewControllerInterface <VerifieViewControllerInterface>
+@property (nonatomic, weak) id <SecondDocInfoViewControllerActionsDelegate> _Nullable actionsDelegate;
+- (void)updateWithDocumentType:(enum VerifieDocumentType)documentType;
+@end
+
+
 SWIFT_CLASS("_TtC7Verifie18VerifieTextConfigs")
 @interface VerifieTextConfigs : NSObject
 /// Move phone closer text. Default <code>Move phone closer</code>
@@ -562,7 +577,9 @@ SWIFT_CLASS("_TtC7Verifie29VerifieViewControllersConfigs")
 @property (nonatomic, readonly, strong) id <VerifieRecommendationsViewControllerInterface> _Nullable recommendationsViewController;
 /// Document Instructions view controller
 @property (nonatomic, readonly, strong) id <VerifieDocInstructionsViewControllerInterface> _Nullable docInstructionsViewController;
-- (nonnull instancetype)initWithDocumentScannerViewController:(id <VerifieDocScannerViewControllerInterface> _Nullable)documentScannerViewController humanDetectorViewController:(id <VerifieHumanDetectorViewControllerInterface> _Nullable)humanDetectorViewController recommendationsViewController:(id <VerifieRecommendationsViewControllerInterface> _Nullable)recommendationsViewController docInstructionsViewController:(id <VerifieDocInstructionsViewControllerInterface> _Nullable)docInstructionsViewController OBJC_DESIGNATED_INITIALIZER;
+/// Second Document Info view controller
+@property (nonatomic, readonly, strong) id <VerifieSecondDocInfoViewControllerInterface> _Nullable secondDocInfoViewController;
+- (nonnull instancetype)initWithDocumentScannerViewController:(id <VerifieDocScannerViewControllerInterface> _Nullable)documentScannerViewController humanDetectorViewController:(id <VerifieHumanDetectorViewControllerInterface> _Nullable)humanDetectorViewController recommendationsViewController:(id <VerifieRecommendationsViewControllerInterface> _Nullable)recommendationsViewController docInstructionsViewController:(id <VerifieDocInstructionsViewControllerInterface> _Nullable)docInstructionsViewController secondDocInfoViewController:(id <VerifieSecondDocInfoViewControllerInterface> _Nullable)secondDocInfoViewController OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end

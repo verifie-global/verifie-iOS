@@ -32,10 +32,12 @@ class DocumentTypeViewController: UITableViewController {
     //    MARK: - Private Functions
     private func startVerifie(_ documentType: VerifieDocumentType) {
         
-        //        let documentScannerViewController: CustomDocScannerViewController = CustomDocScannerViewController.load(from: .main)
-        //        let humanDetectorViewController: CustomHumanDetectorViewController = CustomHumanDetectorViewController.load(from: .main)
-        //        let viewControllersConfigs = VerifieViewControllersConfigs(documentScannerViewController: documentScannerViewController,
-        //                                                                   humanDetectorViewController: humanDetectorViewController)
+        let secondDocInfoViewController: SecondDocInfoViewController = SecondDocInfoViewController.load()
+        let viewControllersConfigs = VerifieViewControllersConfigs(documentScannerViewController: nil,
+                                                                   humanDetectorViewController: nil,
+                                                                   recommendationsViewController: nil,
+                                                                   docInstructionsViewController: nil,
+                                                                   secondDocInfoViewController: secondDocInfoViewController)
         
         documents = []
         score = nil
@@ -46,10 +48,10 @@ class DocumentTypeViewController: UITableViewController {
         let personId = "\(systemName)|\(systemVersion)|\(deviceId)"
         let documentScannerConfigs = VerifieDocumentScannerConfigs(scannerOrientation: .portrait,
                                                                    documentType: documentType)
-        let configs = VerifieConfigs(licenseKey: "5d3f2e38-fe7c-43c6-b532-db9b57e674f8",
+        let configs = VerifieConfigs(licenseKey: "ask_the_vendor",
                                      personId: personId,
                                      textConfigs: VerifieTextConfigs.default(),
-                                     viewControllersConfigs: /*viewControllersConfigs*/ nil,
+                                     viewControllersConfigs: viewControllersConfigs,
                                      documentScannerConfigs: documentScannerConfigs)
         
         verifie = Verifie(configs: configs, delegate: self)

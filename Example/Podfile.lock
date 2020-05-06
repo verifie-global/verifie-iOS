@@ -3,7 +3,7 @@ PODS:
   - QKMRZParser (1.0.1)
   - SVProgressHUD (2.2.5)
   - SwiftyTesseract (3.0.0)
-  - Verifie (0.3.2):
+  - Verifie (0.3.3):
     - Alamofire (~> 5.1)
     - QKMRZParser (~> 1.0.1)
     - SVProgressHUD (~> 2.2.5)
@@ -28,7 +28,7 @@ SPEC CHECKSUMS:
   QKMRZParser: 07921dbffa7e4064406113731bc0f1f5e6210bce
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyTesseract: acce13d69fb5c5b10e77a6df7fa76b16ac1e282b
-  Verifie: caa28058008515f09c7385870cffa0547a65d511
+  Verifie: e47a3943aa0411da203d00ca69d678715993707c
 
 PODFILE CHECKSUM: c62427e126a7306cbf12d5b961af08d145f18197
 

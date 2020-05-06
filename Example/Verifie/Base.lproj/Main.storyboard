@@ -497,6 +497,57 @@
             </objects>
             <point key="canvasLocation" x="-5158" y="11"/>
         </scene>
+        <!--Second Doc Info View Controller-->
+        <scene sceneID="wme-Ce-vXg">
+            <objects>
+                <viewController storyboardIdentifier="SecondDocInfoViewController" id="fmT-dL-75V" customClass="SecondDocInfoViewController" customModule="Verifie_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PXE-vx-Jdp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Second Document Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdB-wk-TSR">
+                                <rect key="frame" x="119.5" y="438" width="175" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="TtM-CC-tgD">
+                                <rect key="frame" x="107" y="762" width="200" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WNQ-4L-12j">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="30"/>
+                                        <state key="normal" title="Close"/>
+                                        <connections>
+                                            <action selector="closeButtonAction:" destination="fmT-dL-75V" eventType="touchUpInside" id="GJH-Dt-Q1B"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="et2-ov-o7a">
+                                        <rect key="frame" x="0.0" y="50" width="200" height="30"/>
+                                        <state key="normal" title="Continue"/>
+                                        <connections>
+                                            <action selector="continueButtonAction:" destination="fmT-dL-75V" eventType="touchUpInside" id="SIc-c9-TaU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="pcP-Qo-7uG"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="zdB-wk-TSR" firstAttribute="centerX" secondItem="PXE-vx-Jdp" secondAttribute="centerX" id="PaY-LE-9dt"/>
+                            <constraint firstItem="zdB-wk-TSR" firstAttribute="centerY" secondItem="PXE-vx-Jdp" secondAttribute="centerY" id="gZa-Ys-jIC"/>
+                            <constraint firstItem="TtM-CC-tgD" firstAttribute="centerX" secondItem="PXE-vx-Jdp" secondAttribute="centerX" id="lDC-8K-R8k"/>
+                            <constraint firstItem="OZQ-bX-VJc" firstAttribute="bottom" secondItem="TtM-CC-tgD" secondAttribute="bottom" constant="20" id="zm0-DK-eg7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="OZQ-bX-VJc"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OtO-XW-EO0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4372" y="756"/>
+        </scene>
     </scenes>
     <resources>
         <image name="cropper_frame" width="288" height="453"/>

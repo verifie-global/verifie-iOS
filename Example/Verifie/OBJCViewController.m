@@ -29,11 +29,12 @@
     VerifieViewControllersConfigs *verifieViewControllersConfigs = [[VerifieViewControllersConfigs alloc] initWithDocumentScannerViewController:documentScannerViewController
                                                                                                                     humanDetectorViewController:humanDetectorViewController
                                                                                                                   recommendationsViewController: nil
-                                                                                                                  docInstructionsViewController: nil];
+                                                                                                                  docInstructionsViewController: nil
+                                                                                                                    secondDocInfoViewController: nil];
     VerifieDocumentScannerConfigs *verifieDocumentScannerConfigs = [[VerifieDocumentScannerConfigs alloc] initWithScannerOrientation:ScannerOrientationLandscape
                                                                                                                         documentType:VerifieDocumentTypeUnknown];
     
-    VerifieConfigs *extractedExpr = [[VerifieConfigs alloc] initWithLicenseKey:@"5d3f2e38-fe7c-43c6-b532-db9b57e674f8"
+    VerifieConfigs *extractedExpr = [[VerifieConfigs alloc] initWithLicenseKey:@"ask_the_vendor"
                                                                       personId:@"12"
                                                                   languageCode:@"ENG"
                                                                    textConfigs:verifieTextConfigs

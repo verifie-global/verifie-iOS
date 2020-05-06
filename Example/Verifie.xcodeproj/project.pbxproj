@@ -12,6 +12,7 @@
 		1715930B246295BE004C165D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715930A246295AF004C165D /* MainViewController.swift */; };
 		17159312246295EA004C165D /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17159311246295EA004C165D /* InfoTableViewCell.swift */; };
 		1715931824629626004C165D /* DocumentTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715931724629626004C165D /* DocumentTypeViewController.swift */; };
+		172503C22463054100BFDB8D /* SecondDocInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172503C12463053E00BFDB8D /* SecondDocInfoViewController.swift */; };
 		176FBBAB2332A6CD00141263 /* OBJCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 176FBBAA2332A6CD00141263 /* OBJCViewController.m */; };
 		176FBBAC2332A6CD00141263 /* CustomDocScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176FBBA92332A6CD00141263 /* CustomDocScannerViewController.swift */; };
 		176FBBAD2332A6CD00141263 /* CustomHumanDetectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176FBBA82332A6CD00141263 /* CustomHumanDetectorViewController.swift */; };
@@ -28,6 +29,7 @@
 		17159311246295EA004C165D /* InfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
 		1715931524629604004C165D /* ImagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesTableViewCell.swift; sourceTree = "<group>"; };
 		1715931724629626004C165D /* DocumentTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentTypeViewController.swift; sourceTree = "<group>"; };
+		172503C12463053E00BFDB8D /* SecondDocInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondDocInfoViewController.swift; sourceTree = "<group>"; };
 		176FBBA72332A6CC00141263 /* OBJCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBJCViewController.h; sourceTree = "<group>"; };
 		176FBBA82332A6CD00141263 /* CustomHumanDetectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHumanDetectorViewController.swift; sourceTree = "<group>"; };
 		176FBBA92332A6CD00141263 /* CustomDocScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDocScannerViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 		1715930C246295C4004C165D /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				172503C02463053600BFDB8D /* Second Doc Info */,
 				1715931624629621004C165D /* Document Type */,
 				1715930E246295DA004C165D /* Verification Result */,
 				1715930D246295CD004C165D /* Main */,
@@ -118,6 +121,14 @@
 				1715931724629626004C165D /* DocumentTypeViewController.swift */,
 			);
 			path = "Document Type";
+			sourceTree = "<group>";
+		};
+		172503C02463053600BFDB8D /* Second Doc Info */ = {
+			isa = PBXGroup;
+			children = (
+				172503C12463053E00BFDB8D /* SecondDocInfoViewController.swift */,
+			);
+			path = "Second Doc Info";
 			sourceTree = "<group>";
 		};
 		4339DBEEC4E9229D01017EFD /* Pods */ = {
@@ -325,6 +336,7 @@
 				1715930B246295BE004C165D /* MainViewController.swift in Sources */,
 				170B09FE246296FA00AA2FAB /* VerificationResultViewController.swift in Sources */,
 				17159312246295EA004C165D /* InfoTableViewCell.swift in Sources */,
+				172503C22463054100BFDB8D /* SecondDocInfoViewController.swift in Sources */,
 				176FBBAB2332A6CD00141263 /* OBJCViewController.m in Sources */,
 				1715931824629626004C165D /* DocumentTypeViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
