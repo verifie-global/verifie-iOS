@@ -17,7 +17,7 @@ source 'https://github.com/verifie-global/pod-specs.git'
 
 ```pod 'Verifie', '~> 0.3.4'```
 
-- Run `pod install`
+- Run `pod install --repo-update`
 
 
 #### Set privacy settings
