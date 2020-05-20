@@ -237,6 +237,15 @@ SWIFT_PROTOCOL("_TtP7Verifie39DocScannerViewControllerActionsDelegate_")
 - (void)didPressCloseButtonDocScannerViewController:(id <VerifieDocScannerViewControllerInterface> _Nonnull)sender;
 @end
 
+@class NSCoder;
+
+SWIFT_CLASS("_TtC7Verifie25HumanDetectorProgressView")
+@interface HumanDetectorProgressView : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+- (void)drawRect:(CGRect)rect;
+@end
+
 @protocol VerifieHumanDetectorViewControllerInterface;
 
 SWIFT_PROTOCOL("_TtP7Verifie42HumanDetectorViewControllerActionsDelegate_")
@@ -293,7 +302,6 @@ SWIFT_PROTOCOL("_TtP7Verifie30VerifieViewControllerInterface_")
 @property (nonatomic, weak) id <VerifieBaseViewControllerDelegate> _Nullable lifeCycleDelegate;
 @end
 
-@class NSCoder;
 
 SWIFT_CLASS("_TtC7Verifie25VerifieBaseViewController")
 @interface VerifieBaseViewController : UIViewController <VerifieViewControllerInterface>
@@ -381,7 +389,6 @@ SWIFT_PROTOCOL("_TtP7Verifie45VerifieDocInstructionsViewControllerInterface_")
 - (void)updateWith:(VerifieDocInstructionsTextConfigs * _Nonnull)textConfigs documentType:(enum VerifieDocumentType)documentType;
 @end
 
-@class UIView;
 @class VerifieVideoSessionPreviewView;
 @class UILabel;
 @class UIImageView;
