@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Verifie'
-  s.version          = '0.3.7'
+  s.version          = '0.3.8'
   s.summary          = 'Facial biometrics technology lets your users verify themselves anywhere, anytime.'
   s.description      = 'Intelligent Data Capture Powered by Machine Learning for Fast Customer Onboarding & Identity Verification.'
   s.platform          = :ios
@@ -15,8 +15,8 @@ Pod::Spec.new do |s|
   s.vendored_frameworks = 'Verifie.framework'
   s.preserve_paths = '*.framework'
   
-  s.dependency 'Alamofire', '~> 5.1'
-  s.dependency 'SVProgressHUD', '~> 2.2.5'
-  s.dependency 'QKMRZParser', '~> 1.0.1'
-  s.dependency 'SwiftyTesseract', '~> 3.0.0'
+  s.dependency 'Alamofire', '5.2'
+  s.dependency 'SVProgressHUD', '2.2.5'
+  s.dependency 'QKMRZParser', '1.0.1'
+  s.dependency 'SwiftyTesseract', '3.0'
 end
