@@ -479,7 +479,7 @@ typedef SWIFT_ENUM(NSInteger, VerifieDocumentType, closed) {
 SWIFT_CLASS_NAMED("VerifieHumanDetectorProgressView")
 @interface VerifieHumanDetectorProgressView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 - (void)drawRect:(CGRect)rect;
 @end
 
