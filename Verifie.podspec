@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Verifie'
-  s.version          = '0.4.3'
+  s.version          = '0.4.5'
   s.summary          = 'Facial biometrics technology lets your users verify themselves anywhere, anytime.'
   s.description      = 'Intelligent Data Capture Powered by Machine Learning for Fast Customer Onboarding & Identity Verification.'
   s.platform          = :ios
