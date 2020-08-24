@@ -334,6 +334,8 @@ SWIFT_CLASS("_TtC7Verifie14VerifieConfigs")
 @property (nonatomic, readonly, copy) NSString * _Nullable personId;
 /// Language ISO code. Default <code>ENG</code>
 @property (nonatomic, readonly, copy) NSString * _Nonnull languageCode;
+/// Checks only user’s liveness and skips other steps. Default <code>false</code>
+@property (nonatomic, readonly) BOOL livenessCheck;
 /// Visible texts configuration
 @property (nonatomic, readonly, strong) VerifieTextConfigs * _Nonnull textConfigs;
 /// Colors configuration
@@ -343,11 +345,12 @@ SWIFT_CLASS("_TtC7Verifie14VerifieConfigs")
 @property (nonatomic, readonly, strong) VerifieDocumentScannerConfigs * _Nonnull documentScannerConfigs;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-- (nonnull instancetype)initWithLicenseKey:(NSString * _Nonnull)licenseKey personId:(NSString * _Nullable)personId languageCode:(NSString * _Nonnull)languageCode textConfigs:(VerifieTextConfigs * _Nonnull)textConfigs colorConfigs:(VerifieColorConfigs * _Nonnull)colorConfigs viewControllersConfigs:(VerifieViewControllersConfigs * _Nullable)viewControllersConfigs documentScannerConfigs:(VerifieDocumentScannerConfigs * _Nonnull)documentScannerConfigs OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithLicenseKey:(NSString * _Nonnull)licenseKey personId:(NSString * _Nullable)personId languageCode:(NSString * _Nonnull)languageCode livenessCheck:(BOOL)livenessCheck textConfigs:(VerifieTextConfigs * _Nonnull)textConfigs colorConfigs:(VerifieColorConfigs * _Nonnull)colorConfigs viewControllersConfigs:(VerifieViewControllersConfigs * _Nullable)viewControllersConfigs documentScannerConfigs:(VerifieDocumentScannerConfigs * _Nonnull)documentScannerConfigs OBJC_DESIGNATED_INITIALIZER;
 @end
 
 @class VerifieDocument;
 @class VerifieScore;
+@class VerifieLiveness;
 
 SWIFT_PROTOCOL("_TtP7Verifie15VerifieDelegate_")
 @protocol VerifieDelegate
@@ -355,6 +358,7 @@ SWIFT_PROTOCOL("_TtP7Verifie15VerifieDelegate_")
 - (UIViewController * _Nonnull)viewControllerToPresent:(Verifie * _Nonnull)sender SWIFT_WARN_UNUSED_RESULT;
 - (void)verifie:(Verifie * _Nonnull)sender didReceive:(VerifieDocument * _Nonnull)document;
 - (void)verifie:(Verifie * _Nonnull)sender didCalculate:(VerifieScore * _Nonnull)score;
+- (void)verifie:(Verifie * _Nonnull)sender didCheck:(VerifieLiveness * _Nonnull)liveness;
 - (void)verifieDidFinish:(Verifie * _Nonnull)sender;
 @end
 
@@ -490,6 +494,14 @@ SWIFT_PROTOCOL("_TtP7Verifie43VerifieHumanDetectorViewControllerInterface_")
 @property (nonatomic, weak) id <HumanDetectorViewControllerActionsDelegate> _Nullable actionsDelegate;
 - (void)updateWithStatusText:(NSString * _Nonnull)text;
 - (void)update:(double)progress;
+@end
+
+
+SWIFT_CLASS("_TtC7Verifie15VerifieLiveness")
+@interface VerifieLiveness : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 
