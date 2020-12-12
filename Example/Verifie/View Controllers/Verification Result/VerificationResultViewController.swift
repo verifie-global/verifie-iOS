@@ -137,7 +137,7 @@ final class VerificationResultViewController: UIViewController {
         case .gender:
             return ("Gender", firstDocument?.gender ?? secondDocument?.gender ?? "-")
         case .predictedGender:
-            return ("Predicted Gender", score.predictedGender)
+            return ("Predicted Gender", score.predictedGender ?? "-")
         case .predictedAge:
             return ("Predicted Age", String(score.predictedAge))
         case .nationality:

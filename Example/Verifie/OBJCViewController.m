@@ -37,6 +37,7 @@
     VerifieConfigs *extractedExpr = [[VerifieConfigs alloc] initWithLicenseKey:@"ask_the_vendor"
                                                                       personId:@"12"
                                                                   languageCode:@"ENG"
+                                                                 livenessCheck:NO
                                                                    textConfigs:verifieTextConfigs
                                                                   colorConfigs:colorConfigs
                                                         viewControllersConfigs:verifieViewControllersConfigs

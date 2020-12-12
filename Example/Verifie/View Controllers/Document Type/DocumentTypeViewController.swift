@@ -128,6 +128,10 @@ extension DocumentTypeViewController: VerifieDelegate {
         return self
     }
     
+    func verifie(_ sender: Verifie, didCheck liveness: VerifieLiveness) {
+        
+    }
+    
     func verifieDidFinish(_ sender: Verifie) {
         
         debugPrint("Verifie did finish the job!")

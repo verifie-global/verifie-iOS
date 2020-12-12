@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Verifie'
-  s.version          = '0.4.7'
+  s.version          = '0.4.8'
   s.summary          = 'Facial biometrics technology lets your users verify themselves anywhere, anytime.'
   s.description      = 'Intelligent Data Capture Powered by Machine Learning for Fast Customer Onboarding & Identity Verification.'
   s.platform          = :ios
@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.source            = { :git => 'https://github.com/verifie-global/verifie-iOS.git', :tag => "v#{s.version}"}
 
   s.ios.deployment_target = '11.0'
-  s.swift_version = '5.0'
+  s.swift_version = '5.2'
   
   s.vendored_frameworks = 'Verifie.framework'
   s.preserve_paths = '*.framework'
